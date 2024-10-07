@@ -1,0 +1,12 @@
+[package]
+name = "prover_service"
+version = "0.1.0"
+license.workspace = true
+authors.workspace = true
+homepage.workspace = true
+repository.workspace = true
+edition.workspace = true
+
+[dependencies]
+aptos-keyless-common = { git = "https://github.com/aptos-labs/aptos-core" }
+

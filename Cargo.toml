@@ -8,7 +8,7 @@ edition = "2021"
 [workspace]
 members = [
     "node",
-    "pallets/template",
+    "pallets/template", "prover_service",
     "runtime",
 ]
 resolver = "2"
@@ -72,3 +72,6 @@ sp-storage = { version = "21.0.0", default-features = false }
 sp-transaction-pool = { version = "34.0.0", default-features = false }
 sp-version = { version = "37.0.0", default-features = false }
 substrate-wasm-builder = { version = "24.0.0", default-features = false }
+
+[patch.crates-io]
+x25519-dalek = { git = "https://github.com/aptos-labs/x25519-dalek", branch = "zeroize_v1" }
