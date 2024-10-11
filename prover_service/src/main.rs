@@ -1,4 +1,5 @@
 use aptos_keyless_common::api::{RequestInput, ProverServiceResponse};
+use std::sync::Mutex;
 
 
 pub type Bytes = Vec<u8>;
@@ -23,10 +24,10 @@ pub struct CircuitConfig {}
 
 #[derive(Default)]
 pub struct State {
-    prover: Mutex<RapidProver>, // from rust-snark wrapper
-    groth16_vk: Groth16VK,
-    config: Config,
-    circuit_config: CircuitConfig,
+    pub prover: Mutex<RapidProver>, // from rust-snark wrapper
+    pub groth16_vk: Groth16Vk,
+    pub config: Config,
+    pub circuit_config: CircuitConfig,
 }
 
 impl State {
@@ -55,5 +56,7 @@ fn main() {
 
 #[test]
 fn can_create_state() {
-    assert!(State::new())
+    let test_state = State::new();
+
+    assert!(test_state.groth16_vk.alpha_g1.is_empty());
 }
