@@ -9,4 +9,5 @@ edition.workspace = true
 
 [dependencies]
 aptos-keyless-common = { git = "https://github.com/aptos-labs/aptos-core" }
+rust-rapidsnark = {git = "https://github.com/aptos-labs/rust-rapidsnark" }
 

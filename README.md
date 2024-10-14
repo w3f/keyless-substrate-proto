@@ -14,3 +14,10 @@ Make sure when building anything depending on Aptos SDK to run this when buildin
 ```rust
 RUSTFLAGS="--cfg tokio_unstable"  cargo build --release
 ```
+
+### Make sure tbb a DYLD library path is correct in your terminal config
+Mac
+```bash
+export DYLD_LIBRARY_PATH="/opt/homebrew/lib:$DYLD_LIBRARY_PATH" &&
+source ~/.zshrc
+```
